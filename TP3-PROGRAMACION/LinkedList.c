@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "LinkedList.h"
+#include "../inc/LinkedList.h"
 
 
 static Node* getNode(LinkedList* this, int nodeIndex);
@@ -371,18 +371,14 @@ int ll_isEmpty(LinkedList* this)
  */
 int ll_push(LinkedList* this, int index, void* pElement)
 {
-    int returnAux = -1;
-    if(this!=NULL)
-    {
-        if(ll_len(this)==0)
-        {
-            returnAux=1;
-        }
-        else
-        {
-            returnAux=0;
-        }
-    }
+    int validacion,returnAux = -1;
+      if(this!=NULL && (index>=0 && index<= ll_len(this))){
+            validacion= addNode(this,index,pElement);
+
+             if(validacion==0){
+                returnAux=0;
+             }
+      }
     return returnAux;
 }
 

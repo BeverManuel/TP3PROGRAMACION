@@ -371,14 +371,14 @@ int ll_isEmpty(LinkedList* this)
  */
 int ll_push(LinkedList* this, int index, void* pElement)
 {
-    int validacion,returnAux = -1;
-      if(this!=NULL && (index>=0 && index<= ll_len(this))){
-            validacion= addNode(this,index,pElement);
-             if(validacion==0){
-                returnAux=0;
-             }
-      }
-    return returnAux;
+	int returnAux = -1;
+	      if(this!=NULL && (index>=0 && index<= ll_len(this))){
+	    	  returnAux= addNode(this,index,pElement);
+	             if(returnAux==0){
+	                returnAux=0;
+	             }
+	      }
+	    return returnAux;
 }
 
 

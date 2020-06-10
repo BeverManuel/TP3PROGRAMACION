@@ -164,7 +164,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
         {
         	printf("\n\nSelecionado:\n");
             empleado_listarUNEmpleado(empleadoBorrar);
-            if(utn_getNumero(&pregunta,"\nPara moficionar presione:\n"
+            if(utn_getNumero(&pregunta,"\nPara borrar presione:\n"
                         						   "1. SI\n"
                         						   "2. NO - CANCELAR Y VOLVER\n"
                         					   	   "ELIJA: ","\nERROR - CARGA INCORRECTO\n",1,2,3)==0)
@@ -172,11 +172,8 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
             	switch (pregunta)
             	{
             	case 1:
-            		if(empleado_modificar(empleadoBorrar,indice_id2)==1)
-					{
-            			ll_remove(pArrayListEmployee,indice_id2);
-            			retorno=1;
-					}
+            		ll_remove(pArrayListEmployee,indice_id2);
+            		retorno=1;
             		break;
             	case 2:
             		return 0;
